@@ -809,6 +809,20 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 │○ !proses
 ╰❒ !done
 
+╭─❒ 「 Cek Menu 」
+│○ !rate 
+│○ !gantengcek
+│○ !cekganteng
+│○ !cantikcek
+│○ !cekcantik
+│○ !sangecek
+│○ !ceksange
+│○ !gaycek
+│○ !cekgay
+│○ !lesbicek
+│○ !ceklesbi
+╰❒ !cekmati
+
 ╭─❒ 「 Anonymous 」
 │○ !menfess
 │○ !anonymous 
@@ -1731,7 +1745,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╭─❒ 「 TqTo 」 
 │○ My God
 │○ My Parents
-│○ Fatih A.
+│○ BagusXyz
 │○ Ferdi
 │○ DikaArdnt
 │○ Mhankbarbar
@@ -1863,6 +1877,23 @@ return`╭─❒ 「 Owner 」
 │○ !setpppanjang
 ╰❒ !setppbot [reply image]
 `}
+
+exports.cekmenu = (prefix) =>{
+return`╭─❒ 「 Cek Menu 」
+│○ !rate 
+│○ !gantengcek
+│○ !cekganteng
+│○ !cantikcek
+│○ !cekcantik
+│○ !sangecek
+│○ !ceksange
+│○ !gaycek
+│○ !cekgay
+│○ !lesbicek
+│○ !ceklesbi
+╰❒ !cekmati
+`}
+
 
 exports.database = (prefix) =>{
 	return`╭─❒ 「 Database 」 
