@@ -1664,6 +1664,41 @@ Info: *bold* hash is Locked
          alpha.sendMessage(from, { text: `Rate : ${q}\nJawaban : *${te}%*` }, { quoted: fkontak })
 
           break
+case 'cekmati':
+if (!q) return reply(`Invalid!\n\nYg mau di cek siapa kontol?`)
+predea = await axios.get(`https://api.agify.io/?name=${q}`)
+reply(`Nama : ${predea.data.name}\n*Mati Pada Umur :* ${predea.data.age} Tahun.\n\n_Cepet Cepet Tobat Bro Soalnya Mati ga ada yang tau_`)
+break
+case 'gantengcek':
+case 'cekganteng':
+ 
+if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Riych`)
+const gan = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+const teng = gan[Math.floor(Math.random() * gan.length)]
+alpha.sendMessage(from, { text: `Nama : ${q}\nJawaban : *${teng}%*` }, { quoted: m })
+
+break
+case 'cantikcek':
+case 'cekcantik':
+ 
+if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Riych`)
+const can = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+const tik = can[Math.floor(Math.random() * can.length)]
+alpha.sendMessage(from, { text: `Nama : ${q}\nJawaban : *${tik}%*` }, { quoted: m })
+
+break
+case 'sangecek':
+case 'ceksange':
+case 'gaycek':
+case 'cekgay':
+case 'lesbicek':
+case 'ceklesbi':
+if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} ${pushname}`)
+const sangeh = ['5', '10', '15','20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
+alpha.sendMessage(from, { text: `Nama : ${q}\nJawaban : *${sange}%*` }, { quoted: m })
+
+break
          case 'cekproses': {
             if (!m.isGroup) return reply(lang.groupOnly())
             const getTextP = await getTextSetProses(m.chat, set_proses);
@@ -3875,6 +3910,27 @@ case 'setmenu2': {
             }
          }
          break
+case 'cekmenu':
+         case 'menucek': {
+            if (db.data.settings[botNumber].typemenu2 == 'image') {
+               sendButImage(alpha, m.chat, sender, buttonDefault4, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : wa.me/${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@5.0.0\n╰─⬣` + '\n\n' + lang.cekmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                  quoted: m
+               })
+            }
+            if (db.data.settings[botNumber].typemenu2 == 'location') {
+               Alpha.sendButLoc(alpha, m.chat, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix), '©' + ownername, pp_bot, buttonDefault3, [sender, ownernomer + '@s.whatsapp.net'], {
+                  userJid: m.chat,
+                  quoted: m
+               })
+            }
+            if (db.data.settings[botNumber].typemenu2 == 'templateLocation') {
+               Alpha.send5ButLoc(alpha, reSize, m.chat, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : wa.me/${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@5.0.0\n╰─⬣` + '\n\n' + lang.cekmenu(prefix), '©' + ownername, pp_bot, buttonDefault2, [sender, ownernomer + '@s.whatsapp.net'])
+            }
+            if (db.data.settings[botNumber].typemenu2 == 'templateImage') {
+               Alpha.send5ButImg(alpha, m.chat, `Selamat ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : wa.me/${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@5.0.0\n╰─⬣` + '\n\n' + lang.cekmenu(prefix), '©' + ownername, pp_bot, buttonDefault2, [sender, ownernomer + '@s.whatsapp.net'])
+            }
+         }
+         break
          case 'logocmd':
          case 'logomenu': {
             if (db.data.settings[botNumber].typemenu2 == 'image') {
@@ -5320,7 +5376,7 @@ case 'setmenu2': {
             var mon = args.join(' ')
             var m1 = mon.split("|")[0]
             var m2 = mon.split("|")[1]
-            const style = ['aldous', 'alice-2', 'angela-2', 'argus-2', 'chou', 'chou-2', 'estes', 'eudora', 'eudora-2', 'granger', 'granger-2', 'gusion-3', 'hanabi-2', 'hanzo', 'helcurt', 'layla-3', 'lesley-4', 'lunox-2', 'odette-3', 'saber', 'thamuz', 'vexana', 'argus', 'dyrroth', 'esmeralda-2', 'kadita-2', 'lancelot', 'leomord-2', 'lylia', 'vale', 'valir', 'xborg', 'zhask', 'alice', 'alpha', 'athena', 'badang', 'balmond', 'bane', 'diggie', 'trunks', 'fanny-2', 'fanny-3', 'freya', 'guinevere', 'gusion', 'gusion-2', 'hanabi', 'harith', 'harith-2', 'hayabusa-2', 'kadita', 'kagura-2', 'kagura-3', 'karina-2', 'kimmy', 'layla-2', 'leomord', 'lesley-2', 'lesley-3', 'lunox', 'nartis', 'niya-2', 'nana', 'nana-2', 'natalia', 'natalia-2', 'odette-2', 'pharsa', 'rafaela-2', 'selena-2', 'zilong', 'alucard', 'angela', 'bruno', 'change', 'claude', 'fanny', 'hayabusa', 'hilda', 'hylos', 'kagura', 'karina', 'karrie', 'layla', 'lesley', 'lolita', 'ninotaur', 'ninsittar', 'niya', 'noskov', 'odette', 'rafaela', 'selena']
+            const style = ['aldous', 'alice-2', 'angela-2', 'argus-2', 'chou', 'chou-2', 'estes', 'eudora', 'eudora-2', 'granger', 'granger-2', 'gusion-3', 'hanabi-2', 'hanzo', 'helcurt', 'layla-3', 'lesley-4', 'lunox-2', 'odette-3', 'saber', 'thamuz', 'vexana', 'argus', 'dyrroth', 'esmeralda-2', 'kadita-2', 'lancelot', 'leomord-2', 'lylia', 'vale', 'valir', 'xborg', 'zhask', 'alice', 'alpha', 'athena', 'badang', 'balmond', 'bane', 'diggie', 'trunks', 'fanny-2', 'fanny-3', 'freya', 'guinevere', 'gusion', 'gusion-2', 'hanabi', 'harith', 'harith-2', 'hayabusa-2', 'kadita', 'alpha-2', 'alpha-3', 'karina-2', 'kimmy', 'layla-2', 'leomord', 'lesley-2', 'lesley-3', 'lunox', 'nartis', 'niya-2', 'nana', 'nana-2', 'natalia', 'natalia-2', 'odette-2', 'pharsa', 'rafaela-2', 'selena-2', 'zilong', 'alucard', 'angela', 'bruno', 'change', 'claude', 'fanny', 'hayabusa', 'hilda', 'hylos', 'kagura', 'karina', 'karrie', 'layla', 'lesley', 'lolita', 'ninotaur', 'ninsittar', 'niya', 'noskov', 'odette', 'rafaela', 'selena']
             if (!style.includes(m2)) {
                let listt = `${lang.maketeamlogo_(style.length, 'Heroes')}`
                no = 0
@@ -7883,7 +7939,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                let tek = m.quoted ? quoted.text : quoted.text.split(args[0])[1]
                const getTextD = await getTextSetDone(m.chat, set_done);
                let sukses = (getTextD || `「 *TRANSAKSI BERHASIL* 」\n\n\`\`\`📆 TANGGAL : @tanggal\n⌚ JAM     : @jam\n✨ STATUS  : Berhasil\`\`\`\n\n📝 Catatan :\n@catatan\n\nTerimakasih @user Next Order ya🙏`).replace('@tanggal', `${tanggal(new Date())}`).replace('@jam', time).replace('@catatan', `${tek ? tek : '-'}`).replace('@user', '@' + m.quoted.sender.split('@')[0])
-               alpha.sendTextWithMentions(m.chat, sukses, m)
+               alpha.sendTextWithMentions(m.chat, sukses, m) 
             }
 
 
