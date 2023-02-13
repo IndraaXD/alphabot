@@ -1677,6 +1677,21 @@ const teng = gan[Math.floor(Math.random() * gan.length)]
 alpha.sendMessage(from, { text: `Nama : ${q}\nJawaban : *${teng}%*` }, { quoted: m })
 
 break
+case 'jodohku': {
+if (!m.isGroup) return reply(mess.group)
+let member = participants.map(u => u.id)
+let me = m.sender
+let jodoh = member[Math.floor(Math.random() * member.length)]
+let jawab = `👫Jodoh mu adalah
+
+@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
+let ments = [me, jodoh]
+let buttons = [
+{ buttonId: '.jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
+]
+await kagura.sendButtonText(m.chat, buttons, jawab, ownername, m, {mentions: ments})
+}
+break
 case 'cekgoblok':
 case 'goblokcek':
 case 'cantikcek':
@@ -1730,7 +1745,7 @@ let jawab = `Ciee yang Jadian💖 Jangan lupa pajak jadiannya🐤
 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
 let menst = [orang, jodoh]
 let buttons = [
-{ buttonId: 'jadian', buttonText: { displayText: 'Jodohku' }, type: 1 }
+{ buttonId: '.jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
 ]
 await alpha.sendButtonText(m.chat, buttons, jawab, ownername, m, {mentions: menst})
 }
@@ -7988,7 +8003,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                if (!m.quoted) return reply(lang.LockCmd())
                let tek = m.quoted ? quoted.text : quoted.text.split(args[0])[1]
                const getTextD = await getTextSetDone(m.chat, set_done);
-               let sukses = (getTextD || `「 *TRANSAKSI BERHASIL* 」\n\n\`\`\`📆 TANGGAL : @tanggal\n⌚ JAM     : @jam\n✨ STATUS  : Berhasil\`\`\`\n\n?? Catatan :\n@catatan\n\nTerimakasih @user Next Order ya🙏`).replace('@tanggal', `${tanggal(new Date())}`).replace('@jam', time).replace('@catatan', `${tek ? tek : '-'}`).replace('@user', '@' + m.quoted.sender.split('@')[0])
+               let sukses = (getTextD || `「 *TRANSAKSI BERHASIL* 」\n\n\`\`\`📆 TANGGAL : @tanggal\n⌚ JAM     : @jam\n✨ STATUS  : Berhasil\`\`\`\n\n📝 Catatan :\n@catatan\n\nTerimakasih @user Next Order ya🙏`).replace('@tanggal', `${tanggal(new Date())}`).replace('@jam', time).replace('@catatan', `${tek ? tek : '-'}`).replace('@user', '@' + m.quoted.sender.split('@')[0])
                alpha.sendTextWithMentions(m.chat, sukses, m) 
             }
 
