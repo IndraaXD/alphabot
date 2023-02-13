@@ -821,7 +821,34 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 │○ !cekgay
 │○ !lesbicek
 │○ !ceklesbi
+│○ !goblokcek
+│○ !cekgoblok
 ╰❒ !cekmati
+
+╭─❒ 「 Kerang Ajaib 」
+│○ !apakah
+│○ !bagaimakah 
+│○ !kapan
+│○ !kapankah
+│○ !bisakah
+╰❒ 
+
+╭─❒ 「 Game Menu 」
+│○ !jadian
+│○ !wangy (nama)
+│○ !kuismath
+│○ !tebakgambar
+│○ !tebakkata
+│○ !tebakbendera
+│○ !tebakkalimat
+│○ !tebaksiapa
+│○ !tebakkabupaten
+│○ !tebakkimia
+│○ !tebaklirik
+│○ !tebaktebakan
+│○ !tekateki
+│○ !susunkata
+╰❒ !caklontong
 
 ╭─❒ 「 Anonymous 」
 │○ !menfess
@@ -1515,21 +1542,6 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 │○ !smeme2 [text|text]
 │○ !memegen [text|text]
 ╰❒
-
-╭─❒ 「 Game Menu 」
-│○ !kuismath
-│○ !tebakgambar
-│○ !tebakkata
-│○ !tebakbendera
-│○ !tebakkalimat
-│○ !tebaksiapa
-│○ !tebakkabupaten
-│○ !tebakkimia
-│○ !tebaklirik
-│○ !tebaktebakan
-│○ !tekateki
-│○ !susunkata
-╰❒ !caklontong
 
 
 ╭─❒ 「 Asupan Menu 」
