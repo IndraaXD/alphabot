@@ -1679,12 +1679,6 @@ alpha.sendMessage(from, { text: `Nama : ${q}\nJawaban : *${teng}%*` }, { quoted:
 break
 case 'cekgoblok':
 case 'goblokcek':
-if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Riych`)
-const gob = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
-const lok = gob[Math.floor(Math.random() * gob.length)]
-alpha.sendMessage(from, { text: `Nama : ${q}\nKegoblokanmu : *${lok}%*` }, { quoted: m })
-
-break
 case 'cantikcek':
 case 'cekcantik':
  
@@ -7994,7 +7988,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                if (!m.quoted) return reply(lang.LockCmd())
                let tek = m.quoted ? quoted.text : quoted.text.split(args[0])[1]
                const getTextD = await getTextSetDone(m.chat, set_done);
-               let sukses = (getTextD || `「 *TRANSAKSI BERHASIL* 」\n\n\`\`\`📆 TANGGAL : @tanggal\n⌚ JAM     : @jam\n✨ STATUS  : Berhasil\`\`\`\n\n📝 Catatan :\n@catatan\n\nTerimakasih @user Next Order ya🙏`).replace('@tanggal', `${tanggal(new Date())}`).replace('@jam', time).replace('@catatan', `${tek ? tek : '-'}`).replace('@user', '@' + m.quoted.sender.split('@')[0])
+               let sukses = (getTextD || `「 *TRANSAKSI BERHASIL* 」\n\n\`\`\`📆 TANGGAL : @tanggal\n⌚ JAM     : @jam\n✨ STATUS  : Berhasil\`\`\`\n\n?? Catatan :\n@catatan\n\nTerimakasih @user Next Order ya🙏`).replace('@tanggal', `${tanggal(new Date())}`).replace('@jam', time).replace('@catatan', `${tek ? tek : '-'}`).replace('@user', '@' + m.quoted.sender.split('@')[0])
                alpha.sendTextWithMentions(m.chat, sukses, m) 
             }
 
