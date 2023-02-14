@@ -1059,7 +1059,7 @@ alpha.sendMessage(m.chat, {
             }, {
                quoted: m
             })
-            }
+            
 break
          //Database
          case 'setcmd': {
