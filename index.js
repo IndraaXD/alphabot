@@ -158,11 +158,6 @@ const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'));
 const jadianime = require('jadianime-ts')
 const {
- UploadFileUgu, 
-webp2mp4File, 
-TelegraPh
- } = require('./lib/uploader')
-const {
    sendButLoc,
    sendButDoC,
    sendButDoc,
