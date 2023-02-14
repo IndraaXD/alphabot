@@ -823,6 +823,8 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 │○ !ceklesbi
 │○ !goblokcek
 │○ !cekgoblok
+│○ !pintercek
+│○ !cekpinter
 ╰❒ !cekmati
 
 ╭─❒ 「 Kerang Ajaib 」
@@ -834,7 +836,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ 
 
 ╭─❒ 「 Game Menu 」
-│○ !jadian
+│○ !jadian/jodohku
 │○ !wangy (nama)
 │○ !kuismath
 │○ !tebakgambar
