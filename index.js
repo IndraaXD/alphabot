@@ -156,6 +156,9 @@ const mute = JSON.parse(fs.readFileSync('./database/mute.json'));
 const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'));
+const jadianimex = require('jadianime-ts')
+const jadianime = require('jadianime-ts')
+const { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
 const {
    sendButLoc,
    sendButDoC,
@@ -966,9 +969,7 @@ ${isSurender ? '' : ``}`.trim()
          }
          break
          case 'absen':
-            if (m.isGroup) {
-               if (!(isGroupAdmins || isCreator)) return reply(lang.adminOnly())
-            }
+            if (m.isGroup) 
             db.data.absen = db.data.absen || {}
             if (!(from in db.data.absen)) return alpha.send1ButMes(m.chat, lang.noAbsen(), `© ${ownername}`, `.absenstart`, lang.StartAbsen(), m)
 
@@ -995,9 +996,8 @@ Total: ${absen.length}
             //alpha.sendTextWithMentions(m.chat, caption, m)
             break
          case 'cekabsen': {
-            if (m.isGroup) {
-               if (!(isGroupAdmins || isCreator)) return reply(lang.adminOnly())
-            }
+            if (m.isGroup) 
+               
             db.data.absen = db.data.absen || {}
             if (!(from in db.data.absen)) return alpha.send1ButMes(m.chat, lang.noAbsen(), `© ${ownername}`, `.absenstart`, lang.StartAbsen(), m)
 
@@ -1036,9 +1036,7 @@ Total: ${absenn.length}
          break
          case 'absenstart':
          case 'mulaiabsen': {
-            if (m.isGroup) {
-               if (!(isGroupAdmins || isCreator)) return reply(lang.adminOnly())
-            }
+            if (m.isGroup) 
             db.data.absen = db.data.absen || {}
             if (from in db.data.absen) return alpha.send2ButMes(m.chat, lang.adaAbsen(), `© ${ownername}`, `.cekabsen`, `Check Absen`, `.deleteabsen`, `Delete Absen`, m)
 
@@ -1049,6 +1047,12 @@ Total: ${absenn.length}
             ]
          }
          break
+case 'jadianimex':
+if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+m.reply(mess.wait)
+let media = await alpha.downloadAndSaveMediaMessage(quoted)
+res = await TelegraPh(media)
+hisoka.sendMessage(m.chat, { image: { url: res.img }, caption: 'nih' }, { quoted: m })
          //Database
          case 'setcmd': {
             db.data.cmd = db.data.cmd || {}
