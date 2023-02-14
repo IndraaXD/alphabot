@@ -156,9 +156,12 @@ const mute = JSON.parse(fs.readFileSync('./database/mute.json'));
 const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'));
-const jadianimex = require('jadianime-ts')
 const jadianime = require('jadianime-ts')
-const { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+const {
+ UploadFileUgu, 
+webp2mp4File, 
+TelegraPh
+ } = require('./lib/uploader')
 const {
    sendButLoc,
    sendButDoC,
@@ -1047,12 +1050,15 @@ Total: ${absenn.length}
             ]
          }
          break
-case 'jadianimex':
+case 'jadianime':
 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 m.reply(mess.wait)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
 res = await TelegraPh(media)
-hisoka.sendMessage(m.chat, { image: { url: res.img }, caption: 'nih' }, { quoted: m })
+anu = jadianime.JadiAnime(`${res}`).then(res => {
+alpha.sendMessage(m.chat, { image: { url: res.img }, caption: 'nih' }, { quoted: m}
+ })
+break
          //Database
          case 'setcmd': {
             db.data.cmd = db.data.cmd || {}
