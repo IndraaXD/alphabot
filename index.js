@@ -1045,7 +1045,7 @@ Total: ${absenn.length}
             ]
          }
          break
-case 'jadianime':
+case 'jadianiggme':
 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 m.reply(mess.wait)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
@@ -2645,6 +2645,18 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                   })
 
 
+               })
+            db.data.users[m.sender].limit -= 1
+         }
+         break
+case 'ssweb': {
+  if (db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
+            reply(lang.wait())
+            axios.get(`https://saipulanuar.ga/api/download/ssweb?url=${command}`)
+               .then(({
+                  data
+               }) => {
+                  alpha.sendImage(m.chat, data.url, lang.ok(), m)
                })
             db.data.users[m.sender].limit -= 1
          }
@@ -5216,6 +5228,24 @@ case 'cekmenu':
             if (db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
             reply(lang.wait())
             let res = await fetch(global.api('alfa', '/api/sound/' + command, {}, 'apikey'))
+            if (!res.ok) throw await res.text()
+            let img = await res.buffer()
+            alpha.sendMessage(m.chat, {
+               audio: img,
+               mimetype: 'audio/mpeg',
+               ptt: true
+            }, {
+               quoted: m
+            })
+            db.data.users[m.sender].limit -= 1
+         }
+         break
+case 'say':
+case 'tts': {
+            if (db.data.settings[botNumber].userRegister && !db.data.users[m.sender].registered) return alpha.send2ButMes(m.chat, `🇮🇩 _Hi @${m.sender.split('@')[0]} silahkan verifikasi terlebih dahulu sebelum memakai fitur bot_${enter}${enter}🇺🇸 _Hi @${m.sender.split('@')[0]} please verify first before using the bot feature_`, `© ${ownername}`, `.daftar ` + pushname, `🇺🇸 Verify`, `.daftar ` + pushname, 'Daftar 🇮🇩', fkontak, [m.sender])
+            if (db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
+            reply(lang.wait())
+            let res = await fetch(`https://saipulanuar.ga/api/text-to-audio/tts?text=${command}&idbahasa=id`)
             if (!res.ok) throw await res.text()
             let img = await res.buffer()
             alpha.sendMessage(m.chat, {
