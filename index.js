@@ -1051,8 +1051,15 @@ m.reply(mess.wait)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
 res = await TelegraPh(media)
 anu = jadianime.JadiAnime(`${res}`).then(res => {
-alpha.sendMessage(m.chat, { image: { url: res.img }, caption: 'nih' }, { quoted: m}
- })
+alpha.sendMessage(m.chat, {
+ image: {
+                  url: res.img
+               },
+               caption: `Nih Kak`
+            }, {
+               quoted: m
+            })
+            }
 break
          //Database
          case 'setcmd': {
