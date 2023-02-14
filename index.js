@@ -1049,8 +1049,8 @@ case 'jadianime':
 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 m.reply(mess.wait)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
+anu = await jadianime()
 res = await TelegraPh(media)
-anu = jadianime.JadiAnime(`${res}`).then(res => {
 alpha.sendMessage(m.chat, {
  image: {
                   url: res.img
@@ -1059,7 +1059,6 @@ alpha.sendMessage(m.chat, {
             }, {
                quoted: m
             })
-            
 break
          //Database
          case 'setcmd': {
