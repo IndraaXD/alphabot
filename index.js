@@ -1689,9 +1689,11 @@ let ments = [me, jodoh]
 let buttons = [
 { buttonId: '.jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
 ]
-await kagura.sendButtonText(m.chat, buttons, jawab, ownername, m, {mentions: ments})
+await alpha.sendButtonText(m.chat, buttons, jawab, ownername, m, {mentions: ments})
 }
 break
+case 'pintercek':
+case 'cekpinter':
 case 'cekgoblok':
 case 'goblokcek':
 case 'cantikcek':
